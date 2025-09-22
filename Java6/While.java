@@ -7,7 +7,7 @@ public class While {
         Scanner sc = new Scanner(System.in);
 
         int a = 10;
-
+// démo while
         while (a > 0) {
             System.out.printf(" La valeur A est %d %n", a);
             a = a - 1;
