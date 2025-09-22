@@ -12,7 +12,12 @@ public class While {
             System.out.printf(" La valeur A est %d %n", a);
             a = a - 1;
         }
-        System.out.println("A est plus petit");
-        sc.close();
+        int b = 0;
+        do{
+            System.out.printf("La valeur de b est %d%n", b);
+            b = b + 1;
+        }while(b<=100);
+            sc.close();
+        }
+        
     }
-}
