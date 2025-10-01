@@ -51,7 +51,7 @@ public class Exer {
                     double haut = 0;
                     do {
                         // boolean correct = false;
-                        System.out.print("Entré un nombre entier positive comme base:");
+                        System.out.print("Entré un nombre entier positive comme base: ");
                         if (sc.hasNextDouble()) {
                             base = sc.nextDouble();
                             sc.nextLine();
@@ -65,7 +65,7 @@ public class Exer {
                         }
                     } while (!correct);
 
-                    System.out.print("Entrez un nombre entier positif comme hauteur :");
+                    System.out.print("Entrez un nombre entier positif comme hauteur: ");
                     if (sc.hasNextDouble()) {
                         haut = sc.nextDouble();
                         sc.nextLine();
@@ -88,7 +88,7 @@ public class Exer {
 
         }
 
-        while (choix equalsIgnoreCase() "c");
+        while (choix.equalsIgnoreCase("c"));
         System.out.println("merci d'avoir quitter");
         sc.close();
         // scanner.close();
