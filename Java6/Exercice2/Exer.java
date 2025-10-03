@@ -1,9 +1,10 @@
 //Raphaël Desjardins
 //2025-09-24
 //TP 2
-package Java6.Exercice2;
 
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Exer {
     public static void main(String[] args) {
@@ -13,6 +14,8 @@ public class Exer {
         int nomcer = 0;
         int nomtri = 0;
         double peritot = 0;
+        LocalDate date = LocalDate.now();
+        String dateFormatee = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         do {
             choix = "";
             System.out.printf(
@@ -44,18 +47,18 @@ public class Exer {
 
                     double dia = ray * 2;
                     double peri = (double) (2 * Math.PI * ray);
-                    // Math.round(peri);
+
                     System.out.printf("Le prérimètre est de %.3f et le diamètre est de %.2f", peri, dia);
                     nomcer++;
                     peritot += peri;
                     break;
                 case "b":
-                    // double ray;
+
                     boolean correct = false;
                     double base = 0;
                     double haut = 0;
                     do {
-                        // boolean correct = false;
+
                         System.out.print("Entré un nombre entier positive comme base: ");
                         if (sc.hasNextDouble()) {
                             base = sc.nextDouble();
@@ -93,10 +96,20 @@ public class Exer {
                     break;
             }
         } while (!choix.equalsIgnoreCase("c"));
+        double moyenne = peritot / (nomcer + nomtri);
         System.out.println("merci d'avoir quitter");
-        System.out.printf(
-                "Vous avez calculé %.2f le périmetre du cercle %n vous avez calculer %.2f le périmetre d'un triangle rectangle %n Ce qui fais un total de %.2f périmatre calculer",
-                nomcer, nomtri, peritot);
+        System.out.printf("|====================================================|%n");
+        System.out.printf("|%-35s|%16s|%n", "Nombre de cercle traité", nomcer);
+        System.out.printf("|====================================================|%n");
+        System.out.printf("|%-35s|%16s|%n", "Nombre de triangle traité", nomtri);
+        System.out.printf("|====================================================|%n");
+        System.out.printf("|%-35s|%16.2f|%n", "Périmetre total traité", peritot);
+        System.out.printf("|====================================================|%n");
+        System.out.printf("|%-35s|%16.2f|%n", "Moyenne du périmetre total traité", moyenne);
+        System.out.printf("|====================================================|%n");
+        System.out.printf("|%-35s|%16s|%n", "Date de la saisie ", dateFormatee);
+        System.out.printf("|====================================================|%n");
+
         sc.close();
         // scanner.close();
     }
