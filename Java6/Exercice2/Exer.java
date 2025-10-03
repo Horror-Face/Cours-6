@@ -10,6 +10,9 @@ public class Exer {
         Scanner sc = new Scanner(System.in);
         // Scanner scanner = new Scanner(System.in);
         String choix;
+        int nomcer = 0;
+        int nomtri = 0;
+        double peritot = 0;
         do {
             choix = "";
             System.out.printf(
@@ -43,6 +46,8 @@ public class Exer {
                     double peri = (double) (2 * Math.PI * ray);
                     // Math.round(peri);
                     System.out.printf("Le prérimètre est de %.3f et le diamètre est de %.2f", peri, dia);
+                    nomcer++;
+                    peritot += peri;
                     break;
                 case "b":
                     // double ray;
@@ -83,13 +88,15 @@ public class Exer {
                     double vtop = Math.sqrt(top);
                     double trp = vtop + haut + base;
                     System.out.printf("Le périmètre du triangle rectangle est de %.2f", trp);
+                    nomtri++;
+                    peritot += trp;
                     break;
             }
-
-        }
-
-        while (choix.equalsIgnoreCase("c"));
+        } while (!choix.equalsIgnoreCase("c"));
         System.out.println("merci d'avoir quitter");
+        System.out.printf(
+                "Vous avez calculé %.2f le périmetre du cercle %n vous avez calculer %.2f le périmetre d'un triangle rectangle %n Ce qui fais un total de %.2f périmatre calculer",
+                nomcer, nomtri, peritot);
         sc.close();
         // scanner.close();
     }
